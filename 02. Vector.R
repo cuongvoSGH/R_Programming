@@ -48,9 +48,13 @@ range(x)
 x <- 1:4
 y <- 4:1
 
+x <- 1:2
+y <- 1:3
+x * y
+
 x + y
 
-x * y
+suppressWarnings(x * y)
 
 x %*% y
 
