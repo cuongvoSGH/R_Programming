@@ -3,8 +3,8 @@
 # Algorithms Documentation
 
 integrate3d <- function(f, over, n){
-  x <- seq(from = over$x[[1]], to = over$x[[2]], length.out = if (n > 10^3) {10^3} else {n}) 
-  y <- seq(from = over$y[[1]], to = over$y[[2]], length.out = if (n > 10^3) {10^3} else {n})
+  x <- seq(from = over$x[[1]], to = over$x[[2]], length.out = if (n > 10^4) {10^4} else {n}) 
+  y <- seq(from = over$y[[1]], to = over$y[[2]], length.out = if (n > 10^4) {10^4} else {n})
   x1 <- sample(x, size = n, replace = TRUE)
   y1 <- sample(y, size = n, replace = TRUE)
   z_actual <- f(x1,y1)
@@ -12,7 +12,7 @@ integrate3d <- function(f, over, n){
   z_min <- min(z_min, over$x[[1]], over$y[[1]])
   z_max <- max(z_actual)
   z_max <- max(z_max, over$x[[2]], over$y[[2]])
-  z <- seq(from = z_min, to = z_max, length.out = if (n > 10^3) {10^3} else {n}) 
+  z <- seq(from = z_min, to = z_max, length.out = if (n > 10^4) {10^4} else {n}) 
   z1 <- sample(z, size = n, replace = TRUE)
   
   
