@@ -25,8 +25,3 @@ integrate3d(f = function(x, y) {cos(x) * y},
             over = list(x = c(0, pi / 2), y = c(0, 1)),
             n = 10^5
             )
-
-
-
-
-
