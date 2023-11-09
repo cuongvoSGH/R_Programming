@@ -52,4 +52,17 @@ hist(x = v, density = 20, angle = -45, col = "red", probability = TRUE, breaks =
 
 # Function in R return the last expression
 
+f <- function(...){
+  for (a in list(...)){
+    print(a)
+  }
+}
 
+f(1,2,7,9)
+
+# `[` Bracket Function
+# `[<-` Insert Function
+# `(` <- Also the function, can be define as function
+# %*%
+# %%
+# %/%
