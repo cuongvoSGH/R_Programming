@@ -3,7 +3,7 @@ data_2.csv
 test.R
 wallpaper.png
 
-./data
+./data/
 
 # History files
 .Rhistory
