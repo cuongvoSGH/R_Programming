@@ -1,11 +1,8 @@
-# Cuong Vo - 131116
-
-# Algorithms Documentation
-
-game <- list(
-  "player1" = array(c(1, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2)),
-  "player2" = array(c(1, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2)),
-  "player3" = array(c(1, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2))
+game_var <- list(
+  "player1" = array(c(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2, 2)),
+  "player2" = array(c(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2, 2)),
+  "player3" = array(c(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2, 2)),
+  "player4" = array(c(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2, 2))
 )
 
 Action_Search <- function(current_step, new_flip, action_profiles, current_player, action_total, n_player){
@@ -96,5 +93,5 @@ getAllPureStrategyNE <- function(game_var){
   return(result_nash)
 }
 
-getAllPureStrategyNE(game)
+getAllPureStrategyNE(game_var)
 
