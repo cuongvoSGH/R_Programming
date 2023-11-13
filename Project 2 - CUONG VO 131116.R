@@ -8,24 +8,26 @@ game <- list(
   "player3" = array(c(1, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2))
 )
 
-Action_Search <- function(current_step, new_flip, action_profiles, current_player, action_total, n_player){
-  current_action_profiles <- c()
-  for (e in 1:n_player){
-    current_action_profiles <- c(current_action_profiles, action_profiles[current_step, e])
-  }
-  current_action_profiles[current_player] <- new_flip
-  for (e in 1:action_total){
-    tmp <- c()
-    for (f in 1:n_player){
-      tmp <- c(tmp, action_profiles[e,f])
-    }
-    if (sum(tmp == current_action_profiles) == n_player) {
-      return(e)
-    }
-  }
-}
 
 getAllPureStrategyNE <- function(game_var){
+  
+  Action_Search <- function(current_step, new_flip, action_profiles, current_player, action_total, n_player){
+    current_action_profiles <- c()
+    for (e in 1:n_player){
+      current_action_profiles <- c(current_action_profiles, action_profiles[current_step, e])
+    }
+    current_action_profiles[current_player] <- new_flip
+    for (e in 1:action_total){
+      tmp <- c()
+      for (f in 1:n_player){
+        tmp <- c(tmp, action_profiles[e,f])
+      }
+      if (sum(tmp == current_action_profiles) == n_player) {
+        return(e)
+      }
+    }
+  }
+  
   # Initial for data processing
   game_index <- list()
   n_player <- length(game_var)
