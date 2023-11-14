@@ -1,11 +1,28 @@
 # Cuong Vo - 131116
 
 # Algorithms Documentation
+# Step 1:
+#   Have to reduce the dimension of the action profiles. The input data is multi dimensions 
+#   Using expand.grid() function to reduce dimension of action profiles to [number of player x Total action]
+# Step 2:
+#   For each action profiles, check for each player
+#   If at that action profile, there is a other player has incentives to deviate from it, 
+#   mark FALSE for that action profiles of this player, 
+#   If no player have incentives to deviate, mark TRUE for this action profiles of this player
+# Step 3:
+#   Nash equilibrium is the action profiles that all player have TRUE in the action profiles 
 
+# Example 1
 game <- list(
   "player1" = array(c(1, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2)),
   "player2" = array(c(1, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2)),
   "player3" = array(c(1, 0, 0, 0, 0, 0, 0, 1), dim = c(2, 2, 2))
+)
+
+# Example 2
+game <- list(
+  "player1" = array(c(5, 10, 1, 2), dim = c(2, 2)),
+  "player2" = array(c(5, 1, 10, 2), dim = c(2, 2))
 )
 
 

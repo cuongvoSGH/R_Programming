@@ -1,6 +1,22 @@
 # Cuong Vo - 131116
 
 # Algorithms Documentation
+# Algorithms name BFS - Breadth-First Search using Queue data structure
+# Step 1:
+#   Initiate for image to convert to RDS extension and direction list (L, R, U, D)
+# Step 2:
+#   Start with point (1,1) --> Start Point
+#   Queue = [Start point, ...]
+#   Using While loops
+#     Pop one element from Queue (1st Element)
+#     For each direction, if there is the way --> push that point into Queue and return to the previous move
+#     Else return to the previous move
+#     After all direction, remove the current element of the Queue
+#   Stop when Queue is empty
+# Step 3:
+#   For each point (x,y) in the endRegion, if that point is marked --> visited by the algorithms
+#   --> Return TRUE
+#   Else Return FALSE
 
 # Cleaning
 library(magick)
@@ -21,8 +37,12 @@ saveRDS(object = d3, file = "./maze.RDS")
 # Reading in the maze
 d0 <- readRDS(file = "./maze.RDS")
 
-# Finding Path
+# Example 1
 endPosition  <- list(x = 220:230, y = 325:335)
+startPoint <- list(x = 1, y =1)
+
+# Example 2
+endPosition  <- list(x = 387:413, y = 322:348)
 startPoint <- list(x = 1, y =1)
 
 pathQ <- function(maze, startPoint, endRegion){
