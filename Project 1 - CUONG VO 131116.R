@@ -47,11 +47,11 @@ startPoint <- list(x = 1, y =1)
 
 pathQ <- function(maze, startPoint, endRegion){
   direction <- list(x = c(-1,1,0,0), y = c(0,0,-1,1)) 
-  track_path <- d0
+  track_path <- maze
   move_line_x <- c()
   move_line_y <- c()
-  m <- dim(d0)[1]
-  n <- dim(d0)[2]
+  m <- dim(maze)[1]
+  n <- dim(maze)[2]
   u <- startPoint$x
   v <- startPoint$y
   track_path[u,v] <- FALSE
@@ -81,7 +81,7 @@ pathQ <- function(maze, startPoint, endRegion){
   
   for (i in endRegion$x){
     for (j in endRegion$y){
-      if (track_path[i,j] == FALSE && d0[i,j] == TRUE) return(TRUE)
+      if (track_path[i,j] == FALSE && maze[i,j] == TRUE) return(TRUE)
     }
   }
   return(FALSE)
