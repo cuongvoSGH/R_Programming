@@ -148,3 +148,5 @@ sapply(X = b, FUN = function(x) {x^2})
 
 b <- list(sin, cos, log, exp)
 sapply(X = b, FUN = function(f) {f(1)})
+
+library(dplyr)
