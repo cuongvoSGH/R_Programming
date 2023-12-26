@@ -28,6 +28,7 @@ game <- list(
 
 getAllPureStrategyNE <- function(game_var){
   
+  # This function use to check for whether player have incentive to derivative the move or not
   Action_Search <- function(current_step, new_flip, action_profiles, current_player, action_total, n_player){
     current_action_profiles <- c()
     for (e in 1:n_player){
@@ -69,6 +70,7 @@ getAllPureStrategyNE <- function(game_var){
   total_action <- dim(profiles)[1]
   nash_equi <- matrix(TRUE, nrow = total_action, ncol = n_player)
   
+  # Check for each action profiles and for each player, each player check for each move type 
   for (i in 1:n_player){ 
     for (j in 1:total_action){ 
       for (k in 1:n_player){ 
