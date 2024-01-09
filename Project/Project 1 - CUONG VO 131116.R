@@ -35,7 +35,7 @@ d3 <- array(
 # Saving
 saveRDS(object = d3, file = "./maze.RDS")
 # Reading in the maze
-d0 <- readRDS(file = "./Project/maze.RDS")
+d0 <- readRDS(file = "./maze.RDS")
 
 # Example 1
 endPosition  <- list(x = 220:230, y = 325:335)
